@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+ 
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+    <title>React App</title>
+  </head>
+  <body>
+    <!-- the DIV that will contain the widget -->
+<div class="weatherWidget" ></div>
+
+<script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/kolkata?unitGroup=metric&include=days&key=YOUR_API_KEY&contentType=json", //Sign up for your personal key
+       location:"kolkata, India", //Enter an address
+       unitGroup:"metric", //"us" or "metric"
+       forecastDays:5, //how many days forecast to show
+       title:"Kolkata,India", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</script>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0" nonce="ZCWWPyy7"></script>
+    <div id="fb-root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+  </body>
+</html>

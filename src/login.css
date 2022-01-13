@@ -1,0 +1,28 @@
+.login >div >img {
+ object-fit: contain;
+ height: 150px;
+}
+.login >div{
+    display: flex;
+    flex-direction: column;
+}
+.login >button:hover{
+  background-color: white;
+  color:#2e81d4;
+}
+.login > button {
+  width: 300px;
+  background-color:#2e81d4;
+  color: #eff2f5;
+  font-weight: 800;
+}
+.login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  background-color: rgb(247, 243, 243);;
+}
+.ankush > img{
+  width: 120px;
+}
